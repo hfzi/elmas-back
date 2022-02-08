@@ -74,12 +74,12 @@ app.get("/results3", function (req, res) {
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
-      const url2 = $(this).find("a").attr("href");
+      const url3 = $(this).find("a").attr("href");
       const img = $(this).find("img").attr("src");
       const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
-        url2,
+        url3,
         img,
       });
     });
@@ -96,12 +96,12 @@ app.get("/results4", function (req, res) {
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
-      const url2 = $(this).find("a").attr("href");
+      const url4 = $(this).find("a").attr("href");
       const img = $(this).find("img").attr("src");
       const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
-        url2,
+        url4,
         img,
       });
     });
@@ -118,12 +118,12 @@ app.get("/results5", function (req, res) {
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
-      const url2 = $(this).find("a").attr("href");
+      const url5 = $(this).find("a").attr("href");
       const img = $(this).find("img").attr("src");
       const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
-        url2,
+        url5,
         img,
       });
     });
