@@ -31,15 +31,15 @@ app.get("/results1", function (req, res) {
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
       const url1 = $(this).find("a").attr("href");
-      const img = $(this).find("img").attr("src");
-      const isim = title.split(" (Rigged Car)");
+      const img = $(this).find("img").attr("src").substring(0,101)
+      const isim = title.toString().split(" (Rigged Car)");
+      const asd = isim.filter((a) => {a.trim !== "Car Teleporter"; console.log(a)});
       articles.push({
         isim,
         url1,
         img,
       });
     });
-
     res.json(articles);
   });
 });
@@ -53,7 +53,7 @@ app.get("/results2", function (req, res) {
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
       const url2 = $(this).find("a").attr("href");
-      const img = $(this).find("img").attr("src");
+      const img = $(this).find("img").attr("src").substring(0, 101);
       const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
@@ -75,7 +75,7 @@ app.get("/results3", function (req, res) {
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
       const url3 = $(this).find("a").attr("href");
-      const img = $(this).find("img").attr("src");
+      const img = $(this).find("img").attr("src").substring(0, 101);
       const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
@@ -97,7 +97,7 @@ app.get("/results4", function (req, res) {
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
       const url4 = $(this).find("a").attr("href");
-      const img = $(this).find("img").attr("src");
+      const img = $(this).find("img").attr("src").substring(0, 101);
       const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
@@ -119,7 +119,7 @@ app.get("/results5", function (req, res) {
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
       const title = $(this).find("h5").text();
       const url5 = $(this).find("a").attr("href");
-      const img = $(this).find("img").attr("src");
+      const img = $(this).find("img").attr("src").substring(0, 101);
       const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
@@ -132,7 +132,4 @@ app.get("/results5", function (req, res) {
   });
 });
 
-app.listen(
-  PORT
-  //, () => console.log(`server çalışıyor ${PORT}`)
-);
+app.listen(PORT, () => console.log(`http://localhost:${PORT}/results1`));
