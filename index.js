@@ -29,11 +29,9 @@ app.get("/results1", function (req, res) {
     const $ = cheerio.load(html);
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
-      const title = $(this).find("h5").text();
-      const url1 = $(this).find("a").attr("href");
-      const img = $(this).find("img").attr("src").substring(0,101)
-      const isim = title.toString().split(" (Rigged Car)");
-      const asd = isim.filter((a) => {a.trim !== "Car Teleporter"; console.log(a)});
+      const url1 = $(this).find("a").attr("href").split("/products");
+      const img = $(this).find("img").attr("src").substring(0, 101);
+      const isim = $(this).find("h5").text().split(" (Rigged Car)");
       articles.push({
         isim,
         url1,
@@ -51,10 +49,9 @@ app.get("/results2", function (req, res) {
     const $ = cheerio.load(html);
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
-      const title = $(this).find("h5").text();
-      const url2 = $(this).find("a").attr("href");
+      const isim = $(this).find("h5").text().split(" (Rigged Car)");
+      const url2 = $(this).find("a").attr("href").split("/products");
       const img = $(this).find("img").attr("src").substring(0, 101);
-      const isim = title.split(" (Rigged Car)");
       articles.push({
         isim,
         url2,
@@ -73,10 +70,9 @@ app.get("/results3", function (req, res) {
     const $ = cheerio.load(html);
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
-      const title = $(this).find("h5").text();
-      const url3 = $(this).find("a").attr("href");
+      const url3 = $(this).find("a").attr("href").split("/products");
       const img = $(this).find("img").attr("src").substring(0, 101);
-      const isim = title.split(" (Rigged Car)");
+      const isim = $(this).find("h5").text().split(" (Rigged Car)");
       articles.push({
         isim,
         url3,
@@ -95,10 +91,9 @@ app.get("/results4", function (req, res) {
     const $ = cheerio.load(html);
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
-      const title = $(this).find("h5").text();
-      const url4 = $(this).find("a").attr("href");
+      const url4 = $(this).find("a").attr("href").split("/products");
       const img = $(this).find("img").attr("src").substring(0, 101);
-      const isim = title.split(" (Rigged Car)");
+      const isim = $(this).find("h5").text().split(" (Rigged Car)");
       articles.push({
         isim,
         url4,
@@ -117,10 +112,9 @@ app.get("/results5", function (req, res) {
     const $ = cheerio.load(html);
     const articles = [];
     $(".col-12.col-md-6.col-lg-3.mb-4").each(function () {
-      const title = $(this).find("h5").text();
-      const url5 = $(this).find("a").attr("href");
+      const url5 = $(this).find("a").attr("href").split("/products");
       const img = $(this).find("img").attr("src").substring(0, 101);
-      const isim = title.split(" (Rigged Car)");
+      const isim = $(this).find("h5").text().split(" (Rigged Car)");
       articles.push({
         isim,
         url5,
