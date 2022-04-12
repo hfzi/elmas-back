@@ -9,9 +9,9 @@ const url = `https://blendermarket.com/creators/elmas?page=`;
 
 app.use(cors());
 
-/* app.get("/", function (req, res) {
+app.get("/", function (req, res) {
   res.send("sa")
-}); */
+});
 
 app.get("/product/:page", function (req, res) {
   axios(url + req.params.page).then((response) => {
